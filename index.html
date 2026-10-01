@@ -1,710 +1,1362 @@
+```html
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <!-- EDIT HERE: Website title shown in the browser tab -->
-        <title>Jack Stevenson — Racing Driver #97</title>
-            <!-- EDIT HERE: Short description for search engines -->
-        <meta name="description" content="Jack Stevenson — Scottish racing driver, #97.">
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-            <style>
-:root {
---bg:#050914;
---panel:#091324;
---text:#f5f8ff;
---muted:#7f8ea5;
---blue:#287cff;
---cyan:#5dbbff;
---line:#ffffff1b}* {
-box-sizing:border-box;
-margin:0}html {
-scroll-behavior:smooth}body {
-background:var(--bg);
-color:var(--text);
-font-family:Inter,sans-serif;
-overflow-x:hidden}.noise {
-position:fixed;
-inset:0;
-pointer-events:none;
-opacity:.025;
-z-index:20;
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.glow {
-position:fixed;
-width:300px;
-height:300px;
-border-radius:50%;
-background:radial-gradient(circle,#287cff18,transparent 68%);
-transform:translate(-50%,-50%);
-pointer-events:none;
-z-index:1}header#nav {
-height:78px;
-position:fixed;
-z-index:10;
-top:0;
-left:0;
-right:0;
-padding:0 5vw;
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:linear-gradient(#050914e8,transparent);
-transition:.3s}header#nav.scrolled {
-background:#050914e8;
-backdrop-filter:blur(15px);
-height:66px;
-border-bottom:1px solid var(--line)}.brand {
-display:flex;
-gap:11px;
-align-items:center;
-color:#fff;
-text-decoration:none;
-font-family:'Barlow Condensed'}.brand>b {
-font-size:30px}.brand span {
-font-weight:800;
-line-height:.8}.brand small {
-font-size:9px;
-letter-spacing:.2em;
-color:#8290a5}.menu {
-display:none}nav {
-display:flex;
-gap:30px}nav a {
-color:#aab7c9;
-text-decoration:none;
-font:700 12px 'Barlow Condensed';
-letter-spacing:.15em}nav a:hover {
-color:#fff}.hero {
-height:100vh;
-min-height:700px;
-position:relative;
-display:flex;
-align-items:center;
-padding:100px 7vw;
-overflow:hidden;
-background:radial-gradient(circle at 80% 45%,#287cff22,transparent 25%),linear-gradient(120deg,#050914,#07111f)}.grid {
-position:absolute;
-inset:0;
-background-image:linear-gradient(#7890b00b 1px,transparent 1px),linear-gradient(90deg,#7890b00b 1px,transparent 1px);
-background-size:70px 70px;
-transform:perspective(600px) rotateX(60deg) scale(1.8);
-transform-origin:bottom}.hero-copy {
-position:relative;
-z-index:2}.eyebrow,.heading small,.statement small,.contact small {
-font:700 11px 'Barlow Condensed';
-letter-spacing:.2em;
-color:#9cacc1}.hero h1 {
-font:900 clamp(90px,14vw,190px)/.7 'Barlow Condensed';
-letter-spacing:-.04em;
-margin:28px 0}.hero h1 i,.heading h2 i,.statement h2 i,.contact h2 i {
-font-style:normal;
-color:transparent;
--webkit-text-stroke:1px #fff9}.hero p {
-font:600 24px 'Barlow Condensed';
-letter-spacing:.08em;
-color:#b8c5d7}.hero p strong {
-color:#fff}.buttons {
-display:flex;
-gap:12px;
-margin-top:35px}.buttons a,.contact a {
-padding:15px 20px;
-border:1px solid var(--line);
-text-decoration:none;
-color:#fff;
-font:800 12px 'Barlow Condensed';
-letter-spacing:.12em;
-transition:.3s}.buttons a:first-child,.contact a {
-background:#f5f8ff;
-color:#07101f}.buttons a:hover,.contact a:hover {
-transform:translateY(-3px);
-background:var(--blue);
-color:#fff;
-border-color:var(--blue)}.big97 {
-position:absolute;
-right:3vw;
-bottom:-5vw;
-font:900 45vw 'Barlow Condensed';
-line-height:.7;
-color:#ffffff04}.hero-meta {
-position:absolute;
-bottom:28px;
-left:7vw;
-color:#718198;
-font:700 10px 'Barlow Condensed';
-letter-spacing:.18em}.hero-meta span {
-display:inline-block;
-width:35px;
-height:1px;
-background:#34445c;
-margin:0 12px;
-vertical-align:middle}.ticker {
-border-block:1px solid var(--line);
-overflow:hidden;
-white-space:nowrap;
-background:#07101d}.ticker div {
-padding:14px 0;
-font:800 15px 'Barlow Condensed';
-letter-spacing:.12em;
-animation:marquee 28s linear infinite;
-width:max-content}.ticker div:first-letter {
-color:var(--blue)}.section {
-max-width:1240px;
-margin:auto;
-padding:150px 35px}.heading {
-display:flex;
-justify-content:space-between;
-align-items:end;
-margin-bottom:75px}.heading h2 {
-font:900 clamp(55px,7vw,100px)/.76 'Barlow Condensed';
-text-align:right}.driver {
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:90px;
-align-items:center}.profile {
-height:590px;
-position:relative;
-overflow:hidden;
-border:1px solid var(--line);
-background:linear-gradient(145deg,#10213a,#07101e);
-box-shadow:0 40px 100px #0005;
-padding:25px;
-transform-style:preserve-3d}.profile>span {
-font:700 10px 'Barlow Condensed';
-letter-spacing:.18em;
-color:#8291a6}.profile>strong {
-float:right;
-font:900 28px 'Barlow Condensed'}.helmet {
-position:absolute;
-width:185px;
-height:205px;
-border-radius:48%;
-top:145px;
-left:50%;
-transform:translateX(-50%);
-background:linear-gradient(135deg,#294364,#091322);
-border:1px solid #38557a;
-display:grid;
-place-items:center}.helmet:after {
-content:'';
-position:absolute;
-left:18px;
-right:18px;
-top:85px;
-height:48px;
-background:linear-gradient(90deg,#111c2d,#6380a2,#111c2d);
-border:1px solid #6580a0;
-transform:skew(-10deg)}.helmet b {
-font:900 55px 'Barlow Condensed';
-color:#ffffff15}.body {
-position:absolute;
-width:285px;
-height:250px;
-bottom:70px;
-left:50%;
-transform:translateX(-50%);
-background:linear-gradient(135deg,#173052,#091322);
-clip-path:polygon(24% 0,76% 0,100% 100%,0 100%)}.profile footer {
-position:absolute;
-bottom:25px;
-left:25px;
-right:25px;
-display:flex;
-justify-content:space-between;
-align-items:end}.profile footer b {
-font:900 31px 'Barlow Condensed'}.profile footer small {
-font:700 9px 'Barlow Condensed';
-letter-spacing:.15em;
-color:#8291a6}.copy .lead {
-font:600 29px/1.25 'Barlow Condensed';
-color:#dce6f4;
-margin-bottom:25px}.copy p:not(.lead) {
-color:#8391a5;
-line-height:1.8}.copy p b {
-color:#fff}.stats {
-display:grid;
-grid-template-columns:repeat(3,1fr);
-margin-top:45px;
-border-top:1px solid var(--line)}.stats div {
-padding:25px 15px;
-border-right:1px solid var(--line)}.stats div:last-child {
-border:0}.stats b {
-display:block;
-font:900 45px 'Barlow Condensed'}.stats small {
-font:700 9px 'Barlow Condensed';
-letter-spacing:.18em;
-color:#718198}.statement {
-min-height:600px;
-border-block:1px solid var(--line);
-display:flex;
-align-items:center;
-position:relative;
-overflow:hidden;
-background:linear-gradient(90deg,#07101e,#050914)}.statement>div:not(.ghost) {
-max-width:1240px;
-width:100%;
-margin:auto;
-padding:80px 35px;
-position:relative;
-z-index:2}.ghost {
-position:absolute;
-right:-2%;
-font:900 35vw 'Barlow Condensed';
-color:#fff3}.statement h2,.contact h2 {
-font:900 clamp(90px,13vw,180px)/.7 'Barlow Condensed';
-margin:25px 0}.statement p,.contact p {
-max-width:450px;
-color:#8190a5;
-line-height:1.7}.timeline {
-position:relative}.timeline:before {
-content:'';
-position:absolute;
-left:22px;
-top:0;
-bottom:0;
-width:1px;
-background:linear-gradient(var(--blue),#287cff08)}.timeline article {
-display:grid;
-grid-template-columns:45px 1fr;
-gap:35px;
-min-height:235px;
-position:relative}.timeline article>b {
-width:45px;
-height:45px;
-border:1px solid #29415f;
-background:#081120;
-display:grid;
-place-items:center;
-font:800 13px 'Barlow Condensed';
-z-index:2}.timeline article:first-child>b {
-background:var(--blue);
-border-color:var(--blue)}.timeline article>div {
-border-bottom:1px solid var(--line);
-padding-bottom:55px}.timeline article small {
-font:700 10px 'Barlow Condensed';
-letter-spacing:.2em;
-color:var(--blue)}.timeline h3 {
-font:900 56px 'Barlow Condensed';
-margin:8px 0}.timeline p {
-max-width:650px;
-color:#8290a5;
-line-height:1.7}.timeline em {
-display:block;
-margin-top:18px;
-font:700 9px 'Barlow Condensed';
-letter-spacing:.15em;
-color:#aab9cc}.panel {
-background:#081120;
-border:1px solid var(--line)}.panel>header {
-padding:18px 20px;
-border-bottom:1px solid var(--line);
-font:700 9px 'Barlow Condensed';
-letter-spacing:.15em;
-color:#8190a5}.panel>header span {
-float:right;
-margin-left:35px}.facts {
-display:grid;
-grid-template-columns:repeat(4,1fr)}.facts div {
-padding:30px 22px;
-border-right:1px solid var(--line)}.facts div:last-child {
-border:0}.facts small {
-display:block;
-color:#718198;
-font:700 9px 'Barlow Condensed';
-letter-spacing:.16em;
-margin-bottom:12px}.facts b {
-font:900 27px 'Barlow Condensed'}.rows>div {
-display:grid;
-grid-template-columns:.4fr 1.3fr 1fr 1fr;
-padding:20px 22px;
-border-top:1px solid var(--line);
-font:700 11px 'Barlow Condensed';
-letter-spacing:.08em}.rows b {
-color:#62b8ff}.gallery {
-display:grid;
-grid-template-columns:repeat(3,1fr);
-grid-auto-rows:1fr;
-gap:15px}.photo img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:.7s}.photo:hover img {transform:scale(1.04)}
-.photo {
-position:relative;
-aspect-ratio:1 / 1;
-border:1px solid var(--line);
-overflow:hidden;
-background:linear-gradient(135deg,#0b192c,#07101d);
-display:flex;
-align-items:end;
-padding:22px}.photo:before {
-content:'';
-position:absolute;
-inset:-20%;
-background-image:linear-gradient(135deg,transparent 45%,#287cff1b 46%,transparent 47%),linear-gradient(#7b9bc20b 1px,transparent 1px),linear-gradient(90deg,#7b9bc20b 1px,transparent 1px);
-background-size:auto,45px 45px,45px 45px;
-transition:.7s}.photo:hover:before {
-transform:scale(1.08) rotate(2deg)}.photo:after {
-content:'';
-position:absolute;
-inset:0;
-background:linear-gradient(transparent 35%,#02060dcc)}.photo.large {
-grid-row:span 1}.photo span,.photo b {z-index:2;
-position:relative;
-z-index:2}.photo span {
-position:absolute;
-left:22px;
-bottom:55px;
-font:700 9px 'Barlow Condensed';
-letter-spacing:.17em;
-color:#7992b1}.photo b {
-font:900 25px 'Barlow Condensed'}.note {
-margin-top:18px;
-color:#65758c;
-font-size:12px}.contact {
-min-height:650px;
-position:relative;
-display:flex;
-align-items:center;
-overflow:hidden;
-border-top:1px solid var(--line);
-background:radial-gradient(circle at 50% 40%,#287cff26,transparent 35%)}.contact>div:not(.contact-lines) {
-max-width:1240px;
-width:100%;
-margin:auto;
-padding:90px 35px;
-position:relative;
-z-index:2}.contact-lines {
-position:absolute;
-inset:0;
-background:repeating-linear-gradient(135deg,transparent 0 70px,#5b9be40b 71px 72px)}.contact a {
-display:inline-block;
-margin-top:10px}.contact strong {
-position:absolute;
-right:0;
-bottom:-5%;
-font:900 45vw 'Barlow Condensed';
-line-height:.7;
-color:#fff3}footer {
-padding:30px 5vw;
-border-top:1px solid var(--line);
-display:flex;
-justify-content:space-between;
-color:#718198;
-font:700 9px 'Barlow Condensed';
-letter-spacing:.16em}footer b {
-color:#fff;
-font-size:21px}@keyframes marquee {
-to {
-transform:translateX(-50%)}}.reveal {
-opacity:0;
-transform:translateY(35px);
-transition:.8s ease}.reveal.show {
-opacity:1;
-transform:none}@media(max-width:800px) {
-header#nav {
-padding:0 22px}.menu {
-display:block;
-background:none;
-color:#fff;
-border:0;
-font-size:22px}nav {
-display:none;
-position:absolute;
-top:66px;
-left:15px;
-right:15px;
-padding:15px;
-background:#07101ff5;
-border:1px solid var(--line);
-flex-direction:column;
-gap:0}nav.open {
-display:flex}nav a {
-padding:14px}.hero {
-padding:100px 25px}.hero h1 {
-font-size:24vw}.big97 {
-font-size:70vw;
-right:-5vw}.hero-meta {
-left:25px;
-font-size:8px}.section {
-padding:100px 22px}.heading {
-display:block}.heading h2 {
-text-align:left;
-margin-top:25px;
-font-size:18vw}.driver {
-grid-template-columns:1fr;
-gap:45px}.profile {
-height:500px}.statement>div:not(.ghost) {
-padding:70px 22px}.statement h2,.contact h2 {
-font-size:22vw}.timeline article {
-grid-template-columns:38px 1fr;
-gap:20px}.timeline article>b {
-width:38px;
-height:38px}.timeline h3 {
-font-size:48px}.facts {
-grid-template-columns:1fr 1fr}.facts div:nth-child(2) {
-border-right:0}.rows>div {
-grid-template-columns:.3fr 1.2fr 1fr}.rows>div span:nth-child(3) {
-display:none}.gallery {
-grid-template-columns:repeat(2,1fr);
-grid-auto-rows:1fr}.photo.large {
-grid-row:auto}.contact>div:not(.contact-lines) {
-padding:80px 22px}footer span {
-display:none}}@media(prefers-reduced-motion:reduce) {
-* {
-scroll-behavior:auto!important;
-animation:none!important;
-transition:none!important}}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Jack Stevenson | Racing Driver #97</title>
+<meta name="description" content="Jack Stevenson — Scottish racing driver #97.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --blue:#0057b8;
+    --blue-dark:#003b7a;
+    --blue-light:#eaf3ff;
+    --white:#ffffff;
+    --black:#07111f;
+    --grey:#667589;
+    --light:#f5f8fc;
+    --line:#dce5ef;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--white);
+    color:var(--black);
+    font-family:Inter,sans-serif;
+    overflow-x:hidden;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+a{
+    color:inherit;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:82px;
+    z-index:100;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6vw;
+    border-bottom:1px solid transparent;
+    transition:.3s;
+}
+
+header.scrolled{
+    height:68px;
+    border-color:var(--line);
+    box-shadow:0 8px 30px #001b3a0b;
+}
+
+.logo{
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-number{
+    font:900 40px/1 'Barlow Condensed';
+    color:var(--blue);
+}
+
+.logo-text{
+    font:800 17px/0.85 'Barlow Condensed';
+    letter-spacing:.04em;
+}
+
+.logo-text span{
+    display:block;
+    color:var(--blue);
+}
+
+nav{
+    display:flex;
+    gap:32px;
+}
+
+nav a{
+    text-decoration:none;
+    font:700 13px 'Barlow Condensed';
+    letter-spacing:.13em;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:var(--blue);
+}
+
+.menu{
+    display:none;
+    border:0;
+    background:none;
+    font-size:25px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    background:var(--black);
+}
+
+.hero-image{
+    position:absolute;
+    inset:0;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    opacity:.72;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,#00152dcc 0%,#00152d88 45%,#00152d22 100%),
+        linear-gradient(0deg,#00152ddd 0%,transparent 55%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:150px 7vw 80px;
+    color:white;
+    max-width:900px;
+}
+
+.eyebrow{
+    font:700 13px 'Barlow Condensed';
+    letter-spacing:.2em;
+    color:#b9dcff;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font:900 clamp(80px,13vw,190px)/.78 'Barlow Condensed';
+    letter-spacing:-.035em;
+    text-transform:uppercase;
+}
+
+.hero h1 span{
+    color:#fff;
+    -webkit-text-stroke:2px white;
+    color:transparent;
+}
+
+.hero-description{
+    margin-top:30px;
+    max-width:570px;
+    font-size:18px;
+    line-height:1.6;
+    color:#e4effb;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:35px;
+}
+
+.button{
+    display:inline-block;
+    padding:16px 25px;
+    text-decoration:none;
+    font:800 13px 'Barlow Condensed';
+    letter-spacing:.12em;
+    background:white;
+    color:var(--blue-dark);
+    transition:.25s;
+}
+
+.button.blue{
+    background:var(--blue);
+    color:white;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   BLUE STRIPE
+========================= */
+
+.stripe{
+    height:10px;
+    background:var(--blue);
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    padding:120px 7vw;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:90px;
+    align-items:center;
+}
+
+.section-label{
+    font:700 12px 'Barlow Condensed';
+    letter-spacing:.2em;
+    color:var(--blue);
+    margin-bottom:20px;
+}
+
+.intro h2{
+    font:900 clamp(60px,8vw,105px)/.82 'Barlow Condensed';
+    text-transform:uppercase;
+}
+
+.intro h2 span{
+    color:var(--blue);
+}
+
+.intro-copy{
+    font-size:20px;
+    line-height:1.75;
+    color:var(--grey);
+}
+
+.intro-copy strong{
+    color:var(--black);
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story{
+    background:var(--light);
+    padding:130px 7vw;
+}
+
+.story-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:65px;
+}
+
+.story-header h2{
+    font:900 clamp(65px,9vw,120px)/.8 'Barlow Condensed';
+}
+
+.story-header h2 span{
+    color:var(--blue);
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.story-card{
+    background:white;
+    padding:40px;
+    border-left:5px solid var(--blue);
+}
+
+.story-card-number{
+    font:900 45px 'Barlow Condensed';
+    color:var(--blue);
+}
+
+.story-card h3{
+    font:900 50px 'Barlow Condensed';
+    margin:5px 0 15px;
+}
+
+.story-card p{
+    color:var(--grey);
+    line-height:1.7;
+}
+
+.story-card small{
+    display:block;
+    margin-top:25px;
+    color:var(--blue);
+    font:700 10px 'Barlow Condensed';
+    letter-spacing:.16em;
+}
+
+/* =========================
+   FEATURE IMAGE
+========================= */
+
+.feature{
+    position:relative;
+    min-height:650px;
+    overflow:hidden;
+}
+
+.feature img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.feature:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,#00152dcc,#00152d22);
+}
+
+.feature-content{
+    position:relative;
+    z-index:2;
+    padding:120px 7vw;
+    max-width:700px;
+    color:white;
+}
+
+.feature-content h2{
+    font:900 clamp(75px,10vw,140px)/.75 'Barlow Condensed';
+    margin:20px 0;
+}
+
+.feature-content h2 span{
+    color:#63a9ff;
+}
+
+.feature-content p{
+    color:#dcecff;
+    line-height:1.7;
+    max-width:520px;
+}
+
+/* =========================
+   RACING LOG
+========================= */
+
+.results{
+    padding:130px 7vw;
+}
+
+.results-title{
+    margin-bottom:65px;
+}
+
+.results-title h2{
+    font:900 clamp(70px,9vw,120px)/.8 'Barlow Condensed';
+}
+
+.results-title span{
+    color:var(--blue);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.stat{
+    padding:40px 25px;
+    border-right:1px solid var(--line);
+}
+
+.stat:last-child{
+    border:0;
+}
+
+.stat b{
+    display:block;
+    font:900 52px 'Barlow Condensed';
+    color:var(--blue);
+}
+
+.stat small{
+    font:700 10px 'Barlow Condensed';
+    letter-spacing:.15em;
+    color:var(--grey);
+}
+
+.log{
+    margin-top:30px;
+    border:1px solid var(--line);
+}
+
+.log-row{
+    display:grid;
+    grid-template-columns:.3fr 1.3fr 1fr 1fr;
+    padding:22px 25px;
+    border-bottom:1px solid var(--line);
+    font:700 13px 'Barlow Condensed';
+    letter-spacing:.06em;
+}
+
+.log-row:last-child{
+    border:0;
+}
+
+.log-row b{
+    color:var(--blue);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section{
+    background:var(--blue-dark);
+    padding:130px 7vw;
+    color:white;
+}
+
+.gallery-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:55px;
+}
+
+.gallery-heading h2{
+    font:900 clamp(70px,9vw,120px)/.8 'Barlow Condensed';
+}
+
+.gallery-heading span{
+    color:#70b1ff;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.gallery-item{
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+    background:#001f45;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+.gallery-item:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 55%,#00152dcc);
+}
+
+.gallery-caption{
+    position:absolute;
+    bottom:18px;
+    left:18px;
+    z-index:2;
+}
+
+.gallery-caption small{
+    display:block;
+    color:#82bdff;
+    font:700 9px 'Barlow Condensed';
+    letter-spacing:.16em;
+}
+
+.gallery-caption b{
+    font:900 25px 'Barlow Condensed';
+}
+
+/* =========================
+   PARTNERS
+========================= */
+
+.partners{
+    padding:120px 7vw;
+    text-align:center;
+}
+
+.partners h2{
+    font:900 clamp(65px,8vw,100px)/.8 'Barlow Condensed';
+}
+
+.partners h2 span{
+    color:var(--blue);
+}
+
+.partner-box{
+    margin-top:55px;
+    border:2px dashed var(--line);
+    padding:55px;
+    color:var(--grey);
+}
+
+.partner-box b{
+    display:block;
+    color:var(--black);
+    font:900 35px 'Barlow Condensed';
+    margin-bottom:10px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:var(--black);
+    color:white;
+    padding:140px 7vw;
+    position:relative;
+    overflow:hidden;
+}
+
+.contact:before{
+    content:"97";
+    position:absolute;
+    right:-20px;
+    bottom:-100px;
+    font:900 40vw 'Barlow Condensed';
+    color:#ffffff05;
+}
+
+.contact-content{
+    position:relative;
+    z-index:2;
+    max-width:800px;
+}
+
+.contact h2{
+    font:900 clamp(75px,11vw,150px)/.75 'Barlow Condensed';
+    margin:20px 0 30px;
+}
+
+.contact h2 span{
+    color:#63a9ff;
+}
+
+.contact p{
+    max-width:550px;
+    color:#aebed1;
+    line-height:1.7;
+}
+
+.email{
+    display:inline-block;
+    margin-top:35px;
+    color:white;
+    text-decoration:none;
+    font:700 18px 'Barlow Condensed';
+    border-bottom:2px solid var(--blue);
+    padding-bottom:8px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#020914;
+    color:#8394a9;
+    padding:30px 7vw;
+    display:flex;
+    justify-content:space-between;
+    font:700 10px 'Barlow Condensed';
+    letter-spacing:.13em;
+}
+
+footer b{
+    color:white;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    header{
+        padding:0 22px;
+        height:70px;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:15px;
+        right:15px;
+        background:white;
+        flex-direction:column;
+        gap:0;
+        border:1px solid var(--line);
+        box-shadow:0 15px 30px #0001;
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    nav a{
+        padding:16px;
+        border-bottom:1px solid var(--line);
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-content{
+        padding:120px 25px 55px;
+    }
+
+    .hero h1{
+        font-size:25vw;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .intro{
+        grid-template-columns:1fr;
+        gap:45px;
+        padding:90px 25px;
+    }
+
+    .intro h2{
+        font-size:20vw;
+    }
+
+    .story{
+        padding:90px 25px;
+    }
+
+    .story-header{
+        display:block;
+    }
+
+    .story-header h2{
+        font-size:20vw;
+        margin-top:20px;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        min-height:600px;
+    }
+
+    .feature-content{
+        padding:100px 25px;
+    }
+
+    .feature-content h2{
+        font-size:22vw;
+    }
+
+    .results{
+        padding:90px 25px;
+    }
+
+    .results-title h2{
+        font-size:20vw;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
+    }
+
+    .stat:nth-child(3),
+    .stat:nth-child(4){
+        border-top:1px solid var(--line);
+    }
+
+    .log-row{
+        grid-template-columns:.3fr 1fr 1fr;
+    }
+
+    .log-row span:nth-child(3){
+        display:none;
+    }
+
+    .gallery-section{
+        padding:90px 25px;
+    }
+
+    .gallery-heading{
+        display:block;
+    }
+
+    .gallery-heading h2{
+        font-size:20vw;
+        margin-top:20px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .partners{
+        padding:90px 25px;
+    }
+
+    .partners h2{
+        font-size:20vw;
+    }
+
+    .contact{
+        padding:100px 25px;
+    }
+
+    .contact h2{
+        font-size:22vw;
+    }
+
+    footer{
+        padding:25px;
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    *{
+        scroll-behavior:auto!important;
+        animation:none!important;
+        transition:none!important;
+    }
+}
+
 </style>
-        </head>
-        <body>
-            <div class="noise">
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header id="nav">
+
+    <a href="#home" class="logo">
+        <div class="logo-number">97</div>
+        <div class="logo-text">
+            JACK
+            <span>STEVENSON</span>
+        </div>
+    </a>
+
+    <button class="menu">☰</button>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#story">THE STORY</a>
+        <a href="#racing">RACING</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#partners">PARTNERS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-image">
+        <img src="IMG_0527.jpeg" alt="Jack Stevenson racing in karting">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">
+            SCOTTISH RACING DRIVER · #97
+        </div>
+
+        <h1>
+            JACK<br>
+            <span>STEVENSON</span>
+        </h1>
+
+        <p class="hero-description">
+            From karting in Scotland to the next chapter of a racing career.
+            Follow Jack Stevenson as he builds experience, racecraft and pace
+            on the road to car racing.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#story" class="button">
+                THE STORY ↓
+            </a>
+
+            <a href="#gallery" class="button blue">
+                VIEW GALLERY →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="stripe"></div>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <div class="reveal">
+
+        <div class="section-label">
+            JACK STEVENSON · #97
+        </div>
+
+        <h2>
+            BUILT IN<br>
+            <span>SCOTLAND.</span>
+        </h2>
+
+    </div>
+
+    <div class="intro-copy reveal">
+
+        <p>
+            Jack Stevenson is a 16-year-old Scottish racing driver building
+            his experience from the karting world towards car racing.
+        </p>
+
+        <br>
+
+        <p>
+            With time spent racing at <strong>Larkhall Circuit</strong> and
+            completing an <strong>ARDS test at Knockhill</strong>, Jack is
+            taking the next steps in his motorsport journey.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STORY
+========================= -->
+
+<section class="story" id="story">
+
+    <div class="story-header reveal">
+
+        <div>
+            <div class="section-label">
+                01 / THE JOURNEY
             </div>
-            <div class="glow">
+
+            <h2>
+                THE<br>
+                <span>STORY.</span>
+            </h2>
+        </div>
+
+    </div>
+
+
+    <div class="story-grid">
+
+        <article class="story-card reveal">
+
+            <div class="story-card-number">01</div>
+
+            <h3>KARTING</h3>
+
+            <p>
+                The foundation. Developing racecraft, consistency, braking,
+                racing lines and the ability to fight for every position.
+            </p>
+
+            <small>
+                LARKHALL CIRCUIT · SCOTLAND
+            </small>
+
+        </article>
+
+
+        <article class="story-card reveal">
+
+            <div class="story-card-number">02</div>
+
+            <h3>ARDS TEST</h3>
+
+            <p>
+                The next step. Taking experience onto four wheels at
+                Knockhill and working towards a future in car racing.
+            </p>
+
+            <small>
+                KNOCKHILL RACING CIRCUIT · SCOTLAND
+            </small>
+
+        </article>
+
+
+        <article class="story-card reveal">
+
+            <div class="story-card-number">03</div>
+
+            <h3>CAR RACING</h3>
+
+            <p>
+                The next chapter. Finding the right series, team and car
+                while putting the lessons from karting to work.
+            </p>
+
+            <small>
+                COMING NEXT · 2026+
+            </small>
+
+        </article>
+
+
+        <article class="story-card reveal">
+
+            <div class="story-card-number">97</div>
+
+            <h3>THE NUMBER</h3>
+
+            <p>
+                Number 97 represents Jack every time he gets behind the
+                wheel — from karting circuits to the future of his racing career.
+            </p>
+
+            <small>
+                JACK STEVENSON · #97
+            </small>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURE
+========================= -->
+
+<section class="feature">
+
+    <img src="IMG_0531.jpeg" alt="Jack Stevenson karting">
+
+    <div class="feature-content reveal">
+
+        <div class="section-label">
+            THE MINDSET
+        </div>
+
+        <h2>
+            EVERY LAP.<br>
+            <span>COUNTS.</span>
+        </h2>
+
+        <p>
+            Motorsport is built one lap at a time. Every session brings
+            something new to learn — every race adds another piece of
+            experience.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RACING LOG
+========================= -->
+
+<section class="results" id="racing">
+
+    <div class="results-title reveal">
+
+        <div class="section-label">
+            02 / RACING LOG
+        </div>
+
+        <h2>
+            THE DATA<br>
+            <span>SO FAR.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat reveal">
+            <b>16</b>
+            <small>AGE</small>
+        </div>
+
+        <div class="stat reveal">
+            <b>97</b>
+            <small>RACE NUMBER</small>
+        </div>
+
+        <div class="stat reveal">
+            <b>2</b>
+            <small>KEY CIRCUITS</small>
+        </div>
+
+        <div class="stat reveal">
+            <b>1</b>
+            <small>DRIVER</small>
+        </div>
+
+    </div>
+
+
+    <div class="log reveal">
+
+        <div class="log-row">
+            <span>01</span>
+            <span>LARKHALL</span>
+            <span>KARTING</span>
+            <b>EXPERIENCE</b>
+        </div>
+
+        <div class="log-row">
+            <span>02</span>
+            <span>KNOCKHILL</span>
+            <span>ARDS TEST</span>
+            <b>COMPLETED</b>
+        </div>
+
+        <div class="log-row">
+            <span>03</span>
+            <span>—</span>
+            <span>CAR RACING</span>
+            <b>UP NEXT</b>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="gallery-heading reveal">
+
+        <div>
+
+            <div class="section-label">
+                03 / GALLERY
             </div>
-            <header id="nav">
-                <a href="#top" class="brand">
-                    <b>97</b>
-                        <span>JACK<br>
-                            <small>STEVENSON</small>
-                            </span>
-                        </a>
-                        <button class="menu">☰</button>
-                            <nav>
-                                <a href="#driver">DRIVER</a>
-                                    <a href="#journey">JOURNEY</a>
-                                        <a href="#results">RACING LOG</a>
-                                            <a href="#gallery">GALLERY</a>
-                                                <a href="#contact">CONTACT</a>
-                                                </nav>
-                                            </header>
-                                            <main id="top">
-                                                <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero">
-                                                    <div class="grid">
-                                                    </div>
-                                                    <div class="hero-copy reveal">
-                                                        <span class="eyebrow">SCOTTISH MOTORSPORT · DRIVER #97</span>
-                                                            <h1>JACK<br>
-                                                                <i>STEVENSON</i>
-                                                                </h1>
-                                                                <p>KARTING ROOTS. <strong>RACING FUTURE.</strong>
-                                                                </p>
-                                                                <div class="buttons">
-                                                                    <a href="#journey">EXPLORE THE JOURNEY ↓</a>
-                                                                        <a href="#driver">MEET THE DRIVER ↗</a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="big97">97</div>
-                                                                        <div class="hero-meta">16 YEARS OLD <span>
-                                                                        </span> SCOTLAND <span>
-                                                                    </span> RACING DRIVER</div>
-                                                                </section>
-                                                                <div class="ticker">
-                                                                    <div>KARTING　✦　LARKHALL　✦　KNOCKHILL　✦　ARDS TEST　✦　#97　✦　KARTING　✦　LARKHALL　✦　KNOCKHILL　✦　#97　✦</div>
-                                                                    </div>
-                                                                    <section class="section" id="driver">
-                                                                        <div class="heading reveal">
-                                                                            <small>01 / THE DRIVER</small>
-                                                                                <h2>BUILT FOR<br>
-                                                                                    <i>THE NEXT LAP.</i>
-                                                                                    </h2>
-                                                                                </div>
-                                                                                <div class="driver">
-                                                                                    <div class="profile reveal">
-                                                                                        <span>DRIVER PROFILE</span>
-                                                                                            <strong>#97</strong>
-                                                                                                <div class="helmet">
-                                                                                                    <b>97</b>
-                                                                                                    </div>
-                                                                                                    <div class="body">
-                                                                                                    </div>
-                                                                                                    <!-- ==================== FOOTER ==================== -->
-    <footer>
-                                                                                                        <b>JACK STEVENSON</b>
-                                                                                                            <small>SCOTLAND · 16</small>
-                                                                                                            </footer>
-                                                                                                        </div>
-                                                                                                        <div class="copy reveal">
-                                                                                                            <p class="lead">At 16, Jack Stevenson is taking the next step from karting into car racing — building experience, pace and racecraft one lap at a time.</p>
-                                                                                                                <p>With experience at <b>Larkhall Circuit</b> and time at <b>Knockhill</b> for his ARDS test, the focus is now on turning karting experience into the foundations of a future in motorsport.</p>
-                                                                                                                    <div class="stats">
-                                                                                                                        <div>
-                                                                                                                            <b data-count="16">0</b>
-                                                                                                                                <small>AGE</small>
-                                                                                                                                </div>
-                                                                                                                                <div>
-                                                                                                                                    <b>97</b>
-                                                                                                                                        <small>RACE NUMBER</small>
-                                                                                                                                        </div>
-                                                                                                                                        <div>
-                                                                                                                                            <b>2</b>
-                                                                                                                                                <small>KEY CIRCUITS</small>
-                                                                                                                                                </div>
-                                                                                                                                            </div>
-                                                                                                                                        </div>
-                                                                                                                                    </div>
-                                                                                                                                </section>
-                                                                                                                                <!-- ==================== DRIVER STATEMENT ==================== -->
-    <section class="statement">
-                                                                                                                                    <div class="ghost">RACE</div>
-                                                                                                                                        <div class="reveal">
-                                                                                                                                            <small>THE MINDSET</small>
-                                                                                                                                                <h2>EVERY LAP<br>
-                                                                                                                                                    <i>COUNTS.</i>
-                                                                                                                                                    </h2>
-                                                                                                                                                    <p>The stopwatch doesn't care where you started. It only measures where you're going.</p>
-                                                                                                                                                    </div>
-                                                                                                                                                </section>
-                                                                                                                                                <section class="section" id="journey">
-                                                                                                                                                    <div class="heading reveal">
-                                                                                                                                                        <small>02 / THE JOURNEY</small>
-                                                                                                                                                            <h2>FROM KARTING<br>TO <i>CAR RACING.</i>
-                                                                                                                                                            </h2>
-                                                                                                                                                        </div>
-                                                                                                                                                        <div class="timeline">
-                                                                                                                                                            <article class="reveal">
-                                                                                                                                                                <b>01</b>
-                                                                                                                                                                    <div>
-                                                                                                                                                                        <small>THE FOUNDATION</small>
-                                                                                                                                                                            <h3>KARTING</h3>
-                                                                                                                                                                                <p>Developing racecraft, consistency, braking, lines and the ability to fight for every position.</p>
-                                                                                                                                                                                    <em>LARKHALL CIRCUIT · SCOTLAND</em>
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </article>
-                                                                                                                                                                                <article class="reveal">
-                                                                                                                                                                                    <b>02</b>
-                                                                                                                                                                                        <div>
-                                                                                                                                                                                            <small>THE NEXT STEP</small>
-                                                                                                                                                                                                <h3>ARDS TEST</h3>
-                                                                                                                                                                                                    <p>Taking experience onto four wheels at Knockhill and working towards the requirements of a future in car racing.</p>
-                                                                                                                                                                                                        <em>KNOCKHILL RACING CIRCUIT · SCOTLAND</em>
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                    </article>
-                                                                                                                                                                                                    <article class="reveal">
-                                                                                                                                                                                                        <b>03</b>
-                                                                                                                                                                                                            <div>
-                                                                                                                                                                                                                <small>NEXT CHAPTER</small>
-                                                                                                                                                                                                                    <h3>CAR RACING</h3>
-                                                                                                                                                                                                                        <p>Finding the right series, team and car — and putting the lessons from karting to work.</p>
-                                                                                                                                                                                                                            <em>COMING NEXT · 2026+</em>
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                        </article>
-                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                </section>
-                                                                                                                                                                                                                <section class="section" id="results">
-                                                                                                                                                                                                                    <div class="heading reveal">
-                                                                                                                                                                                                                        <small>03 / RACING LOG</small>
-                                                                                                                                                                                                                            <h2>THE DATA<br>
-                                                                                                                                                                                                                                <i>SO FAR.</i>
-                                                                                                                                                                                                                                </h2>
-                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                            <div class="panel reveal">
-                                                                                                                                                                                                                                <header>DRIVER / 97 <span>STATUS: BUILDING</span>
-                                                                                                                                                                                                                                    <span>SEASON: 2026</span>
-                                                                                                                                                                                                                                    </header>
-                                                                                                                                                                                                                                    <div class="facts">
-                                                                                                                                                                                                                                        <div>
-                                                                                                                                                                                                                                            <small>PRIMARY DISCIPLINE</small>
-                                                                                                                                                                                                                                                <b>KARTING</b>
-                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                <div>
-                                                                                                                                                                                                                                                    <small>CIRCUIT</small>
-                                                                                                                                                                                                                                                        <b>LARKHALL</b>
-                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                        <div>
-                                                                                                                                                                                                                                                            <small>CAR TESTING</small>
-                                                                                                                                                                                                                                                                <b>KNOCKHILL</b>
-                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                <div>
-                                                                                                                                                                                                                                                                    <small>TEAM</small>
-                                                                                                                                                                                                                                                                        <b>INDEPENDENT</b>
-                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                    <div class="rows">
-                                                                                                                                                                                                                                                                        <div>01 <span>LARKHALL</span>
-                                                                                                                                                                                                                                                                            <span>KARTING</span>
-                                                                                                                                                                                                                                                                                <b>EXPERIENCE</b>
-                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                <div>02 <span>KNOCKHILL</span>
-                                                                                                                                                                                                                                                                                    <span>ARDS TEST</span>
-                                                                                                                                                                                                                                                                                        <b>COMPLETED</b>
-                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                        <div>03 <span>—</span>
-                                                                                                                                                                                                                                                                                            <span>CAR RACING</span>
-                                                                                                                                                                                                                                                                                                <b>UP NEXT</b>
-                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                    </section>
-                                                                                                                                                                                                                                                                                    <section class="section" id="gallery">
-                                                                                                                                                                                                                                                                                        <div class="heading reveal">
-                                                                                                                                                                                                                                                                                            <small>04 / GALLERY</small>
-                                                                                                                                                                                                                                                                                                <h2>THE <i>RACING</i>
-                                                                                                                                                                                                                                                                                                    <br>ARCHIVE.</h2>
-                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                <div class="gallery">
-<div class="photo large reveal">
-<img src="IMG_0527.jpeg" alt="Jack Stevenson karting">
-<span>01 / KARTING</span>
-<b>RACING</b>
-</div>
-<div class="photo reveal">
-<img src="IMG_0528.jpeg" alt="Jack Stevenson karting">
-<span>02 / KARTING</span>
-<b>RACING</b>
-</div>
-<div class="photo reveal">
-<img src="IMG_0529.jpeg" alt="Jack Stevenson karting">
-<span>03 / KARTING</span>
-<b>RACING</b>
-</div>
-<div class="photo reveal">
-<img src="IMG_0530.jpeg" alt="Jack Stevenson karting">
-<span>04 / KARTING</span>
-<b>RACING</b>
-</div>
-<div class="photo reveal">
-<img src="IMG_0531.jpeg" alt="Jack Stevenson karting">
-<span>05 / KARTING</span>
-<b>RACING</b>
-</div>
-<div class="photo reveal">
-<img src="IMG_0532.jpeg" alt="Jack Stevenson karting">
-<span>06 / KARTING</span>
-<b>RACING</b>
-</div>
-<div class="photo reveal">
-<img src="IMG_0533.jpeg" alt="Jack Stevenson karting">
-<span>07 / KARTING</span>
-<b>RACING</b>
-</div>
-<div class="photo reveal">
-<img src="IMG_0526.jpeg" alt="Jack Stevenson racing helmet">
-<span>08 / DETAIL</span>
-<b>HELMET</b>
-</div>
-</div>
-<p class="note reveal">Karting photography from Jack Stevenson’s #97 archive.</p>
-                                                                                                                                                                                                                                                                                                                        </section>
-                                                                                                                                                                                                                                                                                                                        <section class="contact" id="contact">
-                                                                                                                                                                                                                                                                                                                            <div class="contact-lines">
-                                                                                                                                                                                                                                                                                                                            </div>
-                                                                                                                                                                                                                                                                                                                            <div class="reveal">
-                                                                                                                                                                                                                                                                                                                                <small>THE NEXT CHAPTER</small>
-                                                                                                                                                                                                                                                                                                                                    <h2>LET'S GO<br>
-                                                                                                                                                                                                                                                                                                                                        <i>RACING.</i>
-                                                                                                                                                                                                                                                                                                                                        </h2>
-                                                                                                                                                                                                                                                                                                                                        <p>For sponsorship, partnerships, testing or motorsport enquiries, get in touch with Jack's team.</p>
-                                                                                                                                                                                                                                                                                                                                            <a href="mailto:jack@example.com">CONTACT JACK ↗</a>
-                                                                                                                                                                                                                                                                                                                                                <small>JackSt9736@outlook.com</small>
-                                                                                                                                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                                                                                                                                                <strong>97</strong>
-                                                                                                                                                                                                                                                                                                                                                </section>
-                                                                                                                                                                                                                                                                                                                                            </main>
-                                                                                                                                                                                                                                                                                                                                            <footer>
-                                                                                                                                                                                                                                                                                                                                                <b>JACK STEVENSON</b>
-                                                                                                                                                                                                                                                                                                                                                    <span>RACING DRIVER · #97</span>
-                                                                                                                                                                                                                                                                                                                                                        <span>SCOTLAND · © 2026</span>
-                                                                                                                                                                                                                                                                                                                                                        </footer>
-                                                                                                                                                                                                                                                                                                                                                        <script>
-                                                                                                                                                                                                                                                                                                                                                            const nav=document.querySelector('#nav'),menu=document.querySelector('.menu'),links=document.querySelector('nav'),glow=document.querySelector('.glow');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>25));menu.onclick=()=>links.classList.toggle('open');document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>links.classList.remove('open'));window.addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));const counter=document.querySelector('[data-count]');const co=new IntersectionObserver(es=>{if(es[0].isIntersecting){let n=0,t=+counter.dataset.count;let id=setInterval(()=>{counter.textContent=++n;if(n>=t)clearInterval(id)},60);co.disconnect()}},{threshold:.7});co.observe(counter);const card=document.querySelector('.profile');if(matchMedia('(pointer:fine)').matches){card.onpointermove=e=>{let r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateY(${x*5}deg) rotateX(${-y*5}deg)`};card.onpointerleave=()=>card.style.transform=''}
-                                                                                                                                                                                                                                                                                                                                                        </script>
-                                                                                                                                                                                                                                                                                                                                                    </body>
-                                                                                                                                                                                                                                                                                                                                                </html>
+
+            <h2>
+                THE <span>RACING</span><br>
+                ARCHIVE.
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item reveal">
+            <img src="IMG_0527.jpeg" alt="Jack Stevenson karting">
+            <div class="gallery-caption">
+                <small>01 / KARTING</small>
+                <b>RACING</b>
+            </div>
+        </div>
+
+
+        <div class="gallery-item reveal">
+            <img src="IMG_0528.jpeg" alt="Jack Stevenson karting">
+            <div class="gallery-caption">
+                <small>02 / KARTING</small>
+                <b>RACING</b>
+            </div>
+        </div>
+
+
+        <div class="gallery-item reveal">
+            <img src="IMG_0529.jpeg" alt="Jack Stevenson karting">
+            <div class="gallery-caption">
+                <small>03 / KARTING</small>
+                <b>RACING</b>
+            </div>
+        </div>
+
+
+        <div class="gallery-item reveal">
+            <img src="IMG_0530.jpeg" alt="Jack Stevenson karting">
+            <div class="gallery-caption">
+                <small>04 / KARTING</small>
+                <b>RACING</b>
+            </div>
+        </div>
+
+
+        <div class="gallery-item reveal">
+            <img src="IMG_0531.jpeg" alt="Jack Stevenson karting">
+            <div class="gallery-caption">
+                <small>05 / KARTING</small>
+                <b>RACING</b>
+            </div>
+        </div>
+
+
+        <div class="gallery-item reveal">
+            <img src="IMG_0532.jpeg" alt="Jack Stevenson karting">
+            <div class="gallery-caption">
+                <small>06 / KARTING</small>
+                <b>RACING</b>
+            </div>
+        </div>
+
+
+        <div class="gallery-item reveal">
+            <img src="IMG_0533.jpeg" alt="Jack Stevenson karting">
+            <div class="gallery-caption">
+                <small>07 / KARTING</small>
+                <b>RACING</b>
+            </div>
+        </div>
+
+
+        <div class="gallery-item reveal">
+            <img src="IMG_0526.jpeg" alt="Jack Stevenson's racing helmet">
+            <div class="gallery-caption">
+                <small>08 / DETAIL</small>
+                <b>HELMET</b>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PARTNERS
+========================= -->
+
+<section class="partners" id="partners">
+
+    <div class="section-label reveal">
+        04 / PARTNERS
+    </div>
+
+    <h2 class="reveal">
+        JOIN THE<br>
+        <span>JOURNEY.</span>
+    </h2>
+
+    <div class="partner-box reveal">
+
+        <b>SPONSORS & PARTNERS</b>
+
+        <p>
+            Interested in supporting Jack's journey through motorsport?
+            Get in touch to discuss sponsorship and partnership opportunities.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-content reveal">
+
+        <div class="section-label">
+            THE NEXT CHAPTER
+        </div>
+
+        <h2>
+            LET'S GO<br>
+            <span>RACING.</span>
+        </h2>
+
+        <p>
+            For sponsorship, partnerships, testing or motorsport enquiries,
+            get in touch with Jack's team.
+        </p>
+
+        <a class="email" href="mailto:JackSt9736@outlook.com">
+            JackSt9736@outlook.com →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <b>JACK STEVENSON · #97</b>
+
+    <span>SCOTTISH RACING DRIVER</span>
+
+    <span>© 2026 JACK STEVENSON</span>
+
+</footer>
+
+
+<script>
+
+/* NAVIGATION */
+
+const nav = document.querySelector("#nav");
+
+window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 30);
+});
+
+
+/* MOBILE MENU */
+
+const menu = document.querySelector(".menu");
+const links = document.querySelector("nav");
+
+menu.addEventListener("click", () => {
+    links.classList.toggle("open");
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        links.classList.remove("open");
+    });
+});
+
+
+/* SCROLL REVEALS */
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+},{
+    threshold:.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
+```
