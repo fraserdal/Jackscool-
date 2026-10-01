@@ -322,11 +322,12 @@ font:700 11px 'Barlow Condensed';
 letter-spacing:.08em}.rows b {
 color:#62b8ff}.gallery {
 display:grid;
-grid-template-columns:1.6fr 1fr;
-grid-template-rows:260px 260px;
+grid-template-columns:repeat(3,1fr);
+grid-auto-rows:1fr;
 gap:15px}.photo img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:.7s}.photo:hover img {transform:scale(1.04)}
 .photo {
 position:relative;
+aspect-ratio:1 / 1;
 border:1px solid var(--line);
 overflow:hidden;
 background:linear-gradient(135deg,#0b192c,#07101d);
@@ -344,7 +345,7 @@ content:'';
 position:absolute;
 inset:0;
 background:linear-gradient(transparent 35%,#02060dcc)}.photo.large {
-grid-row:span 2}.photo span,.photo b {z-index:2;
+grid-row:span 1}.photo span,.photo b {z-index:2;
 position:relative;
 z-index:2}.photo span {
 position:absolute;
@@ -441,8 +442,8 @@ grid-template-columns:1fr 1fr}.facts div:nth-child(2) {
 border-right:0}.rows>div {
 grid-template-columns:.3fr 1.2fr 1fr}.rows>div span:nth-child(3) {
 display:none}.gallery {
-grid-template-columns:1fr;
-grid-template-rows:320px 220px 220px}.photo.large {
+grid-template-columns:repeat(2,1fr);
+grid-auto-rows:1fr}.photo.large {
 grid-row:auto}.contact>div:not(.contact-lines) {
 padding:80px 22px}footer span {
 display:none}}@media(prefers-reduced-motion:reduce) {
